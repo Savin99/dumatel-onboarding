@@ -8,7 +8,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -88,23 +87,18 @@
         ::-webkit-scrollbar { width:0; }
         html { scroll-behavior: smooth; }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
 </head>
 <body class="bg-surface text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- TopAppBar Shared Component -->
 <header class="bg-[#ffffff] dark:bg-slate-950 font-['Space_Grotesk'] text-on-surface tracking-tight docked full-width top-0 sticky z-50 bg-[#f3f3f4] dark:bg-slate-900 flat no shadows flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
 <div class="flex items-center gap-2">
-<img alt="Думатель Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uiD_eFhHFj0XRbM8vvJVuiT_EeiezQxcHMMVIPY3h5a4i8Q85Z1FJEduZ8FueA7SqWhBP2ehgYphCuzC1CfWdAEaBdTof_1ZYBteMLN7ci2dDsOpVtdhsS-DbBEItuR5rRNoHoA4SClZbM_Ja69cNgopI_BNwm5hnjrSsqWjOHxXHRbhHzyU_ritsKnNncK_884HKPcXgkRKSKHpEAk4imAzj5QOPjF1wlBMwEmcErip9K2KPUPzTNfTTmFSzAsMdY4jJlQdv0VIQ" onerror="this.style.display='none'"/>
+<img alt="Думатель Logo" class="h-8 w-auto object-contain" src="logo.png"/>
 <span class="text-2xl font-bold tracking-tighter text-[#1a1a2e] dark:text-white">Думатель</span>
 </div>
 </header>
 <main class="w-full max-w-[360px] mx-auto overflow-x-hidden pb-8">
 <!-- Hero Section -->
-<section class="fade-in px-6 pt-12 pb-16 bg-surface">
+<section class="px-6 pt-12 pb-16 bg-surface">
 <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-container/10 border border-primary-container/20 mb-6">
 <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
 <span class="text-[12px] font-bold text-primary font-label tracking-wide">Активная разработка · Beta</span>
@@ -117,7 +111,7 @@
             </p>
 <div class="mt-12 relative">
 <div class="aspect-square rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant/10">
-<img class="w-full h-full object-cover" data-alt="Abstract 3D visualization of digital nodes and data connections in clean minimalist style with orange and white tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASbFIjTDJZqOc6ncZ5WPjaUdqv9CQz3WgKtRKHxajeMFzHkd0frU6asZVfwIN7yovUnbvBzZTZs_XJR1ijgIj7wXKcMNvU1kdJZHrVXmT-v5aDVkSyoWfTHq4CH9KkF1v-o53II2KkwtAu_9e9r15l1I8vlN_g4UODc1b7pp6u87RVclLbdjW6ElLOFNYSXWosW0P9eMcgA8NNEzPh838DQpkDtvgMrnTtWPfbsNCy_8Yy7H1ExUMYqzOGXbZEBzaBD-QzunpBgEk"/>
+<img class="w-full h-full object-cover" src="hero.png"/>
 </div>
 <div class="absolute -bottom-4 -right-4 glass-card p-4 rounded-xl shadow-2xl border border-outline-variant/10 w-32">
 <div class="text-xs font-bold text-primary-container mb-1">Status</div>
@@ -307,9 +301,9 @@
 <div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 text-center">
 <h2 class="text-2xl font-bold mb-4">Будем рады видеть вас в команде</h2>
 <p class="text-on-secondary-container mb-8">Присоединяйтесь к созданию будущего AI-пространства.</p>
-<a class="inline-flex items-center justify-center w-full py-4 px-6 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-lg shadow-lg hover:shadow-xl transition-all active:scale-95 duration-150" href="https://dumatel.ru">
+<button onclick="if(window.Telegram&&Telegram.WebApp)Telegram.WebApp.openLink('https://dumatel.ru');else window.open('https://dumatel.ru')" class="inline-flex items-center justify-center w-full py-4 px-6 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-lg shadow-lg hover:shadow-xl transition-all active:scale-95 duration-150">
                     Перейти на dumatel.ru
-                </a>
+                </button>
 </div>
 </section>
 </main>
