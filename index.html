@@ -197,31 +197,31 @@
 </div>
 </section>
 <!-- Для кого -->
-<section class="fade-in px-6 py-16 bg-surface">
-<h2 class="text-2xl font-bold tracking-tight mb-8">Для кого</h2>
+<section class="px-6 py-16 bg-surface">
+<h2 class="fade-in text-2xl font-bold tracking-tight mb-8">Для кого</h2>
 <div class="grid grid-cols-2 gap-4">
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3">
+<div class="fade-in p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3" style="transition-delay:0ms">
 <span class="material-symbols-outlined text-primary-container" data-icon="analytics">analytics</span>
 <div>
 <h4 class="font-bold text-sm mb-1">Аналитики</h4>
 <p class="text-[11px] leading-tight text-on-secondary-container">Находят данные в сотнях страниц за секунды.</p>
 </div>
 </div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3">
+<div class="fade-in p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3" style="transition-delay:100ms">
 <span class="material-symbols-outlined text-primary-container" data-icon="shopping_cart">shopping_cart</span>
 <div>
 <h4 class="font-bold text-sm mb-1">Закупщики</h4>
 <p class="text-[11px] leading-tight text-on-secondary-container">Сравнивают предложения поставщиков автоматически.</p>
 </div>
 </div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3">
+<div class="fade-in p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3" style="transition-delay:200ms">
 <span class="material-symbols-outlined text-primary-container" data-icon="gavel">gavel</span>
 <div>
 <h4 class="font-bold text-sm mb-1">Юристы</h4>
 <p class="text-[11px] leading-tight text-on-secondary-container">Ищут нужные пункты в договорах.</p>
 </div>
 </div>
-<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3">
+<div class="fade-in p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3" style="transition-delay:300ms">
 <span class="material-symbols-outlined text-primary-container" data-icon="leaderboard">leaderboard</span>
 <div>
 <h4 class="font-bold text-sm mb-1">Руководители</h4>
@@ -317,17 +317,17 @@
 <section class="fade-in px-6 py-20 bg-surface">
 <div class="space-y-12">
 <div class="group">
-<div class="text-6xl font-bold text-primary-container tracking-tighter mb-2">20+</div>
+<div class="text-6xl font-bold text-primary-container tracking-tighter mb-2" data-count="20" data-suffix="+">0+</div>
 <div class="text-lg font-medium text-on-surface">специалистов</div>
 <div class="h-1 w-12 bg-primary-container mt-4 group-hover:w-full transition-all duration-500"></div>
 </div>
 <div class="group">
-<div class="text-6xl font-bold text-primary-container tracking-tighter mb-2">20+</div>
+<div class="text-6xl font-bold text-primary-container tracking-tighter mb-2" data-count="20" data-suffix="+">0+</div>
 <div class="text-lg font-medium text-on-surface">сервисов</div>
 <div class="h-1 w-12 bg-primary-container mt-4 group-hover:w-full transition-all duration-500"></div>
 </div>
 <div class="group">
-<div class="text-6xl font-bold text-primary-container tracking-tighter mb-2">23</div>
+<div class="text-6xl font-bold text-primary-container tracking-tighter mb-2" data-count="23" data-suffix="">0</div>
 <div class="text-lg font-medium text-on-surface">спринта</div>
 <div class="h-1 w-12 bg-primary-container mt-4 group-hover:w-full transition-all duration-500"></div>
 </div>
@@ -426,9 +426,32 @@
       document.documentElement.className = Telegram.WebApp.colorScheme;
     });
   }
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1200;
+    const start = performance.now();
+    function tick(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        if (e.target.dataset.count) {
+          animateCounter(e.target);
+          observer.unobserve(e.target);
+        }
+      }
+    });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  document.querySelectorAll('[data-count]').forEach(el => observer.observe(el));
 </script>
 </body></html>
