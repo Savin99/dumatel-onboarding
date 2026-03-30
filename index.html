@@ -239,11 +239,13 @@
 <section class="fade-in px-6 py-16 bg-surface">
 <h2 class="text-2xl font-bold tracking-tight mb-6">Чем предстоит заниматься</h2>
 <div class="flex gap-2 mb-2">
-<button id="tab-backend" onclick="switchTab('backend')" class="flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-primary-container text-on-primary">Backend</button>
-<button id="tab-ai" onclick="switchTab('ai')" class="flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-surface-container-low text-on-secondary-container">AI Engineer</button>
+<button id="tab-backend" onclick="switchTab('backend')" class="flex-1 py-2 px-2 rounded-lg text-xs font-bold transition-colors bg-primary-container text-on-primary">Backend</button>
+<button id="tab-ai" onclick="switchTab('ai')" class="flex-1 py-2 px-2 rounded-lg text-xs font-bold transition-colors bg-surface-container-low text-on-secondary-container">AI Engineer</button>
+<button id="tab-analyst" onclick="switchTab('analyst')" class="flex-1 py-2 px-2 rounded-lg text-xs font-bold transition-colors bg-surface-container-low text-on-secondary-container">Аналитик</button>
 </div>
 <p id="subtitle-backend" class="text-sm text-on-secondary-container mb-6">Middle+ / Senior · Python, TypeScript · Гибрид</p>
 <p id="subtitle-ai" class="text-sm text-on-secondary-container mb-6 hidden">Middle+ / Senior · Python, ML/NLP · Гибрид</p>
+<p id="subtitle-analyst" class="text-sm text-on-secondary-container mb-6 hidden">Middle+ / Senior · Системный анализ · Гибрид</p>
 <div id="panel-backend" class="space-y-3">
 <div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
 <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
@@ -363,6 +365,66 @@
 </div>
 </div>
 </div>
+<div id="panel-analyst" class="space-y-3 hidden">
+<div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+<button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+<span class="font-bold text-sm">Спецификации AI-агентов</span>
+<span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon rotate-180">expand_more</span>
+</button>
+<div class="accordion-body open px-4 pb-4">
+<p class="text-sm text-on-secondary-container mb-4">Проектирование логики мультиагентной системы RMMAS — 18 агентов для управления надёжностью оборудования.</p>
+<div class="space-y-3 mb-4">
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Алгоритмы работы агентов, Input/Output-схемы, правила маршрутизации</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Интеграционные контракты: SCADA, CMMS/ERP, IoT — потоки данных, протоколы</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">ТЗ для разработчиков в формате спецификаций из 12 разделов + JSON-схемы</p></div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">FMEA</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">RCM</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">FTA</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Wolfram</span>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+<button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+<span class="font-bold text-sm">Нормативная база и сценарии</span>
+<span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon">expand_more</span>
+</button>
+<div class="accordion-body px-4 pb-4">
+<p class="text-sm text-on-secondary-container mb-4">Трансляция требований ГОСТ/IEC в логику агентов: какой метод применять, какие данные нужны, какой отчёт на выходе.</p>
+<div class="space-y-3 mb-4">
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Анализ нормативной базы: ГОСТ, IEC, API RP, ФНП</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Сценарии использования: от предаварийного сигнала до аудита надёжности</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Техническая документация: глоссарии, схемы архитектуры, реестры агентов</p></div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">ГОСТ/IEC</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">API RP</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">ФНП</span>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+<button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+<span class="font-bold text-sm">Работа с заказчиками</span>
+<span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon">expand_more</span>
+</button>
+<div class="accordion-body px-4 pb-4">
+<p class="text-sm text-on-secondary-container mb-4">Сбор требований на промышленных предприятиях, анализ процессов ТОиР, приоритеты автоматизации.</p>
+<div class="space-y-3 mb-4">
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Анализ процессов ТОиР на предприятиях, выявление болевых точек</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Каталоги методов анализа надёжности по 14 методам</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Формирование архитектурных схем и реестров агентов</p></div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">SCADA</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">CMMS/ERP</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">UML/BPMN</span>
+</div>
+</div>
+</div>
+</div>
 </section>
 <!-- Что мы ожидаем -->
 <section class="fade-in px-6 py-16 bg-surface-container-low">
@@ -411,6 +473,29 @@
 <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">differential privacy</span>
 <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">knowledge graphs</span>
 <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">ГОСТ/IEC</span>
+</div>
+</div>
+</div>
+<div id="req-panel-analyst" class="space-y-6 hidden">
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-secondary-container mb-4 block">Обязательно</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">Системный анализ</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">API-интеграции</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">REST / JSON</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">ГОСТ / IEC / ISO</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">Тех. документация</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">LLM-агенты</span>
+</div>
+</div>
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-secondary-container mb-4 block">Будет плюсом</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">ТОиР / SCADA</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">FMEA / RCM / FTA</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">CMMS/EAM</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">UML / BPMN</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Claude / ChatGPT</span>
 </div>
 </div>
 </div>
@@ -533,21 +618,15 @@
 
   // Tab switching
   function switchTab(tab) {
-    document.getElementById('panel-backend').classList.toggle('hidden', tab !== 'backend');
-    document.getElementById('panel-ai').classList.toggle('hidden', tab !== 'ai');
-    document.getElementById('subtitle-backend').classList.toggle('hidden', tab !== 'backend');
-    document.getElementById('subtitle-ai').classList.toggle('hidden', tab !== 'ai');
-    document.getElementById('req-panel-backend').classList.toggle('hidden', tab !== 'backend');
-    document.getElementById('req-panel-ai').classList.toggle('hidden', tab !== 'ai');
-    var b = document.getElementById('tab-backend');
-    var a = document.getElementById('tab-ai');
-    if (tab === 'backend') {
-      b.className = 'flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-primary-container text-on-primary';
-      a.className = 'flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-surface-container-low text-on-secondary-container';
-    } else {
-      a.className = 'flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-primary-container text-on-primary';
-      b.className = 'flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-surface-container-low text-on-secondary-container';
-    }
+    var tabs = ['backend', 'ai', 'analyst'];
+    var active = 'flex-1 py-2 px-2 rounded-lg text-xs font-bold transition-colors bg-primary-container text-on-primary';
+    var inactive = 'flex-1 py-2 px-2 rounded-lg text-xs font-bold transition-colors bg-surface-container-low text-on-secondary-container';
+    tabs.forEach(function(t) {
+      document.getElementById('panel-' + t).classList.toggle('hidden', tab !== t);
+      document.getElementById('subtitle-' + t).classList.toggle('hidden', tab !== t);
+      document.getElementById('req-panel-' + t).classList.toggle('hidden', tab !== t);
+      document.getElementById('tab-' + t).className = (tab === t) ? active : inactive;
+    });
   }
 
   // Accordion
