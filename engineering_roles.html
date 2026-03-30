@@ -1,482 +1,482 @@
 <!DOCTYPE html>
-<html class="dark" lang="ru"><head>
+<html class="light" lang="ru"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
-<title>Думатель — Инженерные задачи</title>
+<title>Думатель — Инженерные роли</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
   (function() {
-    var scheme = 'dark';
+    var scheme = 'light';
     if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.colorScheme) {
       scheme = window.Telegram.WebApp.colorScheme;
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      scheme = 'light';
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      scheme = 'dark';
     }
     document.documentElement.className = scheme;
   })();
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "surface-container-high": "#262a34",
-          "tertiary-container": "#00abf3",
-          "primary": "#ffb786",
-          "on-secondary-container": "#b1b5bf",
-          "on-surface-variant": "#ddc1b0",
-          "surface-container-low": "#181b25",
-          "surface-container": "#1c1f29",
-          "secondary-container": "#42474f",
-          "outline": "#a58c7d",
-          "surface-variant": "#31353f",
-          "tertiary": "#89ceff",
-          "surface-container-highest": "#31353f",
-          "surface-container-lowest": "#0a0e17",
-          "surface": "#0f131c",
-          "primary-container": "#f58220",
-          "on-surface": "#dfe2ef",
-          "outline-variant": "#564336",
-          "background": "#0f131c",
-          "error": "#ffb4ab",
-          "secondary": "#c2c7d0"
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#ffffff",
+              "surface": "#f9f9fa",
+              "primary-fixed-dim": "#ffb786",
+              "on-secondary-fixed-variant": "#45455b",
+              "on-secondary": "#ffffff",
+              "surface-container-highest": "#e2e2e3",
+              "on-secondary-fixed": "#1a1a2e",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#ffb786",
+              "outline": "#8a7264",
+              "tertiary-fixed-dim": "#89ceff",
+              "outline-variant": "#ddc1b0",
+              "surface-container-low": "#f3f3f4",
+              "tertiary-container": "#00abf3",
+              "on-surface": "#1a1c1d",
+              "primary": "#964900",
+              "on-tertiary-fixed-variant": "#004c6e",
+              "surface-variant": "#e2e2e3",
+              "on-background": "#1a1c1d",
+              "on-primary-container": "#5b2a00",
+              "secondary-container": "#e2e0fc",
+              "primary-fixed": "#ffdcc6",
+              "tertiary": "#006491",
+              "error": "#ba1a1a",
+              "error-container": "#ffdad6",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#001e2f",
+              "surface-tint": "#964900",
+              "surface-container-high": "#e8e8e9",
+              "surface-container-lowest": "#ffffff",
+              "inverse-on-surface": "#f0f1f2",
+              "background": "#f9f9fa",
+              "surface-container": "#eeeeef",
+              "on-primary": "#ffffff",
+              "surface-bright": "#f9f9fa",
+              "inverse-surface": "#2f3132",
+              "tertiary-fixed": "#c9e6ff",
+              "on-secondary-container": "#63627a",
+              "on-primary-fixed": "#311300",
+              "on-primary-fixed-variant": "#723600",
+              "secondary-fixed": "#e2e0fc",
+              "secondary-fixed-dim": "#c6c4df",
+              "secondary": "#5d5c74",
+              "primary-container": "#f58220",
+              "on-surface-variant": "#564336",
+              "on-tertiary-container": "#003c58",
+              "surface-dim": "#dadadb"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
         },
-        fontFamily: {
-          "headline": ["Space Grotesk", "sans-serif"],
-          "body": ["Inter", "sans-serif"],
-          "label": ["Inter", "sans-serif"]
-        },
-        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.25rem", "full": "9999px"},
-      },
-    },
-  }
-</script>
+      }
+    </script>
 <style>
-  /* ─── CSS Variables ─── */
-  :root {
-    --bg: #0f131c;
-    --bg-card: rgba(24, 27, 37, 0.6);
-    --bg-card-solid: #181b25;
-    --bg-surface: #0a0e17;
-    --bg-chip: #262a34;
-    --bg-tabs: #0a0e17;
-    --text: #dfe2ef;
-    --text-secondary: #b1b5bf;
-    --text-muted: #a58c7d;
-    --text-dim: #ddc1b0;
-    --accent: #ffb786;
-    --accent-strong: #f58220;
-    --accent-bg: rgba(245,130,32,0.12);
-    --accent-border: rgba(245,130,32,0.15);
-    --tech-chip-text: #89ceff;
-    --tech-chip-bg: #262a34;
-    --glass-bg: rgba(15, 19, 28, 0.75);
-    --glass-card-bg: rgba(24, 27, 37, 0.6);
-    --glow: rgba(245,130,32,0.06);
-    --glow-btn: rgba(245,130,32,0.3);
-    --separator: #564336;
-    --header-border: rgba(255,255,255,0.04);
-    --quote-border: rgba(255,183,134,0.2);
-    --quote-mark: rgba(255,183,134,0.3);
-    --btn-text: #0f131c;
-    --grad-from: #ffb786;
-    --grad-to: #f58220;
-    --blob-opacity: 0.04;
-    --native-bg: #0a0e17;
-    --native-border: rgba(255,183,134,0.08);
-    --native-glow: rgba(245,130,32,0.08);
-  }
-  .light {
-    --bg: #f9f9fa;
-    --bg-card: rgba(255,255,255,0.8);
-    --bg-card-solid: #f3f3f4;
-    --bg-surface: #ffffff;
-    --bg-chip: #e8e8e9;
-    --bg-tabs: #e2e2e3;
-    --text: #1a1c1d;
-    --text-secondary: #63627a;
-    --text-muted: #8a7264;
-    --text-dim: #564336;
-    --accent: #964900;
-    --accent-strong: #f58220;
-    --accent-bg: rgba(245,130,32,0.1);
-    --accent-border: rgba(221,193,176,0.6);
-    --tech-chip-text: #006491;
-    --tech-chip-bg: #eeeeef;
-    --glass-bg: rgba(255,255,255,0.85);
-    --glass-card-bg: #f3f3f4;
-    --glow: rgba(245,130,32,0.04);
-    --glow-btn: rgba(150,73,0,0.2);
-    --separator: #ddc1b0;
-    --header-border: rgba(0,0,0,0.06);
-    --quote-border: #ddc1b0;
-    --quote-mark: #964900;
-    --btn-text: #ffffff;
-    --grad-from: #f58220;
-    --grad-to: #964900;
-    --blob-opacity: 0.02;
-    --native-bg: #f3f3f4;
-    --native-border: rgba(221,193,176,0.4);
-    --native-glow: rgba(245,130,32,0.06);
-  }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .fade-in { opacity:0; transform:translateY(16px); transition:all 0.5s ease; }
+        .fade-in.visible { opacity:1; transform:translateY(0); }
+        ::-webkit-scrollbar { width:0; }
+        html { scroll-behavior: smooth; }
 
-  body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; }
-  h1, h2, h3, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        /* Accordion */
+        .accordion-body { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.3s ease; }
+        .accordion-body.open { max-height: 600px; opacity: 1; }
 
-  .glass { background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-  .glass-card { background: var(--glass-card-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-  .glow-orange { box-shadow: 0 0 80px 20px var(--glow); }
-  .glow-btn { box-shadow: 0 12px 40px var(--glow-btn); }
-
-  .c-text { color: var(--text); }
-  .c-secondary { color: var(--text-secondary); }
-  .c-muted { color: var(--text-muted); }
-  .c-dim { color: var(--text-dim); }
-  .c-accent { color: var(--accent); }
-  .c-tech { color: var(--tech-chip-text); }
-  .bg-card { background: var(--bg-card); }
-  .bg-card-solid { background: var(--bg-card-solid); }
-  .bg-chip { background: var(--bg-chip); }
-  .bg-tech-chip { background: var(--tech-chip-bg); }
-  .bg-tabs { background: var(--bg-tabs); }
-  .bg-surface { background: var(--bg-surface); }
-  .bg-accent { background: var(--accent-bg); }
-  .border-accent { border-color: var(--accent-border); }
-  .sep { background: var(--separator); }
-  .grad-btn { background: linear-gradient(to right, var(--grad-from), var(--grad-to)); color: var(--btn-text); }
-  .grad-text { background: linear-gradient(to right, var(--grad-from), var(--grad-to)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-
-  ::-webkit-scrollbar { width: 0; }
-  html { scroll-behavior: smooth; }
-
-  .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-  .accordion-body { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease, padding 0.4s ease; }
-  .accordion-body.open { max-height: 500px; opacity: 1; }
-  .accordion-icon { transition: transform 0.3s ease; }
-  .accordion-icon.rotated { transform: rotate(180deg); }
-
-  .tab-panel { display: none; }
-  .tab-panel.active { display: block; }
-
-  .blob { position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none; opacity: var(--blob-opacity); }
-  .border-q { border-color: var(--quote-border); }
-  .c-quote { color: var(--quote-mark); }
-  .bg-native { background: var(--native-bg); }
-  .border-native { border-color: var(--native-border); }
-  .tab-active { background: linear-gradient(135deg, var(--grad-from), var(--grad-to)); color: var(--btn-text); }
-  .tab-inactive { color: var(--text-muted); }
-  .accent-dot { color: var(--accent-strong); }
-  .chip-req { background: var(--accent-bg); color: var(--accent); border: 1px solid var(--accent-border); }
-  .chip-nice { background: var(--bg-chip); color: var(--text-secondary); }
-  .tech-chip { background: var(--tech-chip-bg); color: var(--tech-chip-text); }
-</style>
+        /* ─── Dark Mode ─── */
+        .dark body { background-color: #111314; color: #e2e2e3; }
+        .dark header { background-color: #1a1c1d !important; border-color: #2c2e2f !important; }
+        .dark .bg-surface { background-color: #111314 !important; }
+        .dark .bg-surface-container-low { background-color: #1e2021 !important; }
+        .dark .bg-surface-container-lowest { background-color: #141617 !important; }
+        .dark .bg-surface-container { background-color: #222425 !important; }
+        .dark .bg-surface-container-high { background-color: #2c2e2f !important; }
+        .dark .bg-surface-container-highest { background-color: #363839 !important; }
+        .dark .text-on-surface { color: #e2e2e3 !important; }
+        .dark .text-on-secondary-container { color: #9e9bb8 !important; }
+        .dark .text-on-surface-variant { color: #c5b0a4 !important; }
+        .dark .text-primary { color: #ffb786 !important; }
+        .dark .text-\[\#1a1a2e\] { color: #e2e2e3 !important; }
+        .dark .glass-card { background: rgba(20, 22, 23, 0.85) !important; border-color: rgba(74,56,48,0.25) !important; }
+        .dark .ring-surface { --tw-ring-color: #111314 !important; }
+        .dark .border-outline-variant\/10 { border-color: rgba(74,56,48,0.3) !important; }
+        .dark .border-outline-variant\/20 { border-color: rgba(74,56,48,0.45) !important; }
+        .dark .bg-surface-container-low\/80,
+        .dark [class*="opacity-"] .bg-surface-container-low { background-color: #1e2021 !important; }
+    </style>
 </head>
-<body class="max-w-[390px] mx-auto overflow-x-hidden">
-
-<!-- Ambient background blobs -->
-<div class="blob w-[300px] h-[300px] bg-[#f58220] top-[-100px] left-[-100px] fixed"></div>
-<div class="blob w-[200px] h-[200px] bg-[#00abf3] bottom-[200px] right-[-80px] fixed"></div>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
 
 <!-- Header -->
-<header class="glass sticky top-0 z-50 flex items-center gap-3 px-6 h-14 max-w-[390px]" style="border-bottom:1px solid var(--header-border)">
-  <img alt="Думатель" class="h-6 w-auto object-contain" src="logo.png"/>
-  <span class="text-lg font-bold tracking-tighter c-text font-headline">Думатель</span>
+<header class="bg-[#ffffff] dark:bg-slate-950 font-['Space_Grotesk'] text-on-surface tracking-tight docked full-width top-0 sticky z-50 bg-[#f3f3f4] dark:bg-slate-900 flat no shadows flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+  <div class="flex items-center gap-2">
+    <img alt="Думатель Logo" class="h-8 w-auto object-contain" src="logo.png"/>
+    <span class="text-2xl font-bold tracking-tighter text-[#1a1a2e] dark:text-white">Думатель</span>
+  </div>
 </header>
 
-<main class="px-6 pb-12">
+<main class="w-full max-w-[360px] mx-auto overflow-x-hidden pb-8">
 
-  <!-- Hero -->
-  <section class="fade-in pt-10 pb-14">
-    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent border-accent border mb-5">
-      <span class="w-1.5 h-1.5 rounded-full animate-pulse" style="background:var(--accent-strong)"></span>
-      <span class="text-[10px] font-bold c-accent uppercase tracking-[0.12em]">Набираем команду</span>
-    </span>
-    <h1 class="text-[2.5rem] font-bold tracking-[-0.03em] leading-[1.05] font-headline mb-4">
-      Инженерные<br/>задачи в <span class="grad-text">Думатель</span>
+  <!-- Hero Section -->
+  <section class="px-6 pt-12 pb-16 bg-surface">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-container/10 border border-primary-container/20 mb-6">
+      <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+      <span class="text-[12px] font-bold text-primary font-label tracking-wide">Набираем команду</span>
+    </div>
+    <h1 class="text-4xl font-bold leading-[1.1] tracking-tighter text-on-surface mb-6">
+      Инженерные задачи в <span class="text-primary-container">Думатель</span>
     </h1>
-    <p class="text-[15px] c-secondary leading-relaxed max-w-[320px]">
+    <p class="text-lg text-on-secondary-container leading-relaxed font-body">
       Backend Developer и AI Engineer — два направления, над которыми предстоит работать.
     </p>
   </section>
 
-  <!-- SECTION 1: Почему это интересно -->
-  <section class="fade-in pb-14">
-    <h2 class="text-[1.4rem] font-bold tracking-tight font-headline mb-6">Почему это интересно</h2>
-    <div class="grid grid-cols-2 gap-3 mb-6">
-      <div class="glass-card p-4 rounded-xl flex flex-col justify-between min-h-[136px] border-l-2 relative overflow-hidden group" style="border-color:var(--accent-border)">
-        <span class="material-symbols-outlined c-accent text-[28px]">hub</span>
-        <div class="mt-auto pt-3">
-          <p class="text-[13px] font-bold leading-tight">Мультиагентные AI-системы</p>
-          <p class="text-[11px] c-muted mt-1">18 агентов в проде, не на слайдах</p>
-        </div>
-      </div>
-      <div class="glass-card p-4 rounded-xl flex flex-col justify-between min-h-[136px] relative overflow-hidden group">
-        <span class="material-symbols-outlined c-accent text-[28px]">calculate</span>
-        <div class="mt-auto pt-3">
-          <p class="text-[13px] font-bold leading-tight">Математическая валидация</p>
-          <p class="text-[11px] c-muted mt-1">Wolfram + нормативная база</p>
-        </div>
-      </div>
-      <div class="glass-card p-4 rounded-xl flex flex-col justify-between min-h-[136px] relative overflow-hidden group">
-        <span class="material-symbols-outlined c-accent text-[28px]">shield</span>
-        <div class="mt-auto pt-3">
-          <p class="text-[13px] font-bold leading-tight">Защита данных</p>
-          <p class="text-[11px] c-muted mt-1">PII-прокси, split inference, аудит</p>
-        </div>
-      </div>
-      <div class="glass-card p-4 rounded-xl flex flex-col justify-between min-h-[136px] border-r-2 relative overflow-hidden group" style="border-color:var(--accent-border)">
-        <span class="material-symbols-outlined c-accent text-[28px]">factory</span>
-        <div class="mt-auto pt-3">
-          <p class="text-[13px] font-bold leading-tight">Реальные клиенты</p>
-          <p class="text-[11px] c-muted mt-1">Промышленность, юридика, закупки</p>
-        </div>
-      </div>
-    </div>
-    <div class="relative py-5 pl-6 border-l-2 border-q">
-      <span class="absolute top-1 left-[-1px] text-2xl c-quote font-serif leading-none">&laquo;</span>
-      <p class="text-[14px] leading-[1.6] c-secondary italic">
-        Это не обёртка над ChatGPT. Мы строим систему, которая генерирует юридически значимые документы с полной трассируемостью фактов.
-      </p>
-    </div>
-  </section>
-
-  <!-- SECTION 2: Чем предстоит заниматься -->
-  <section class="fade-in pb-14">
-    <h2 class="text-[1.4rem] font-bold tracking-tight font-headline mb-6">Чем предстоит заниматься</h2>
-    <!-- Tabs -->
-    <div class="flex gap-1.5 p-1 bg-tabs rounded-xl mb-5">
-      <button id="tab-backend" onclick="switchTab('backend')" class="tab-btn tab-active flex-1 py-3 text-[13px] font-bold rounded-lg transition-all duration-300">Backend Developer</button>
-      <button id="tab-ai" onclick="switchTab('ai')" class="tab-btn tab-inactive flex-1 py-3 text-[13px] font-medium rounded-lg transition-all duration-300">AI Engineer</button>
-    </div>
-
-    <!-- ===== BACKEND ===== -->
-    <div id="panel-backend" class="tab-panel active">
-      <div class="flex flex-wrap items-center gap-2 mb-5">
-        <span class="text-[10px] font-bold c-accent uppercase tracking-[0.15em]">Middle+ / Senior</span>
-        <span class="w-1 h-1 rounded-full sep"></span>
-        <span class="text-[11px] c-muted">Python, TypeScript</span>
-        <span class="w-1 h-1 rounded-full sep"></span>
-        <span class="text-[11px] c-muted">Гибрид</span>
-      </div>
-      <div class="space-y-2.5">
-        <div class="accordion glass-card rounded-xl glow-orange overflow-hidden">
-          <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center p-4">
-            <h3 class="font-bold text-[14px] text-left">Персонализация платформы</h3>
-            <span class="material-symbols-outlined c-accent text-xl accordion-icon rotated">expand_more</span>
-          </button>
-          <div class="accordion-body open px-4 pb-4">
-            <p class="text-[13px] c-secondary leading-relaxed mb-3">Система, которая адаптируется под каждого пользователя: профиль, предпочтения, контекст.</p>
-            <ul class="text-[12px] c-text space-y-2 mb-3" style="opacity:0.8">
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Хранилища профилей + API инкрементального обновления</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Фоновая обработка сессий: embedding-кластеризация, паттерны</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Модульный конструктор системных промптов</li>
-            </ul>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">PostgreSQL</span>
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">Redis Streams</span>
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">sentence-transformers</span>
-            </div>
-          </div>
-        </div>
-        <div class="accordion glass-card rounded-xl overflow-hidden">
-          <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center p-4">
-            <h3 class="font-bold text-[14px] text-left">Безопасность и приватность</h3>
-            <span class="material-symbols-outlined c-muted text-xl accordion-icon">expand_more</span>
-          </button>
-          <div class="accordion-body px-4 pb-4">
-            <p class="text-[13px] c-secondary leading-relaxed mb-3">Контроль данных при работе с LLM: классификация, маршрутизация, аудит.</p>
-            <ul class="text-[12px] c-text space-y-2 mb-3" style="opacity:0.8">
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>PII-прокси с типизированной анонимизацией (NER для русского)</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Маршрутизатор: облако vs локальная модель vs retrieval-only</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Append-only аудит-лог с hash chain, sandboxing от prompt injection</li>
-            </ul>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">Natasha/spaCy</span>
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">PKI</span>
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">PostgreSQL triggers</span>
-            </div>
-          </div>
-        </div>
-        <div class="accordion glass-card rounded-xl overflow-hidden">
-          <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center p-4">
-            <h3 class="font-bold text-[14px] text-left">Граф решений</h3>
-            <span class="material-symbols-outlined c-muted text-xl accordion-icon">expand_more</span>
-          </button>
-          <div class="accordion-body px-4 pb-4">
-            <p class="text-[13px] c-secondary leading-relaxed mb-3">Институциональная память: кто, когда, на основании чего принял решение.</p>
-            <ul class="text-[12px] c-text space-y-2 mb-3" style="opacity:0.8">
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Event capture + кластеризация сессий по семантике</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Decision points с версионированием</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Процессные цепочки по entity overlap и временной близости</li>
-            </ul>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">Kafka/Redis Streams</span>
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">embeddings</span>
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">OpenAPI</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== AI ENGINEER ===== -->
-    <div id="panel-ai" class="tab-panel">
-      <div class="flex flex-wrap items-center gap-2 mb-5">
-        <span class="text-[10px] font-bold c-accent uppercase tracking-[0.15em]">Middle+ / Senior</span>
-        <span class="w-1 h-1 rounded-full sep"></span>
-        <span class="text-[11px] c-muted">Python, ML/NLP</span>
-        <span class="w-1 h-1 rounded-full sep"></span>
-        <span class="text-[11px] c-muted">Гибрид</span>
-      </div>
-      <div class="space-y-2.5">
-        <div class="accordion glass-card rounded-xl glow-orange overflow-hidden">
-          <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center p-4">
-            <h3 class="font-bold text-[14px] text-left">Мультиагентная оркестрация</h3>
-            <span class="material-symbols-outlined c-accent text-xl accordion-icon rotated">expand_more</span>
-          </button>
-          <div class="accordion-body open px-4 pb-4">
-            <p class="text-[13px] c-secondary leading-relaxed mb-3">Специализированные агенты: извлечение сущностей, классификация, предсказание действий.</p>
-            <ul class="text-[12px] c-text space-y-2 mb-3" style="opacity:0.8">
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>ProfileExtractor, DecisionDetector, WorkflowDetector</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Пайплайн обнаружения решений с confidence score</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Temporal models для предсказания типа следующего запроса</li>
-            </ul>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">LangGraph</span>
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">Claude API</span>
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">PrefixSpan</span>
-            </div>
-          </div>
-        </div>
-        <div class="accordion glass-card rounded-xl overflow-hidden">
-          <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center p-4">
-            <h3 class="font-bold text-[14px] text-left">Интеллектуальная защита данных</h3>
-            <span class="material-symbols-outlined c-muted text-xl accordion-icon">expand_more</span>
-          </button>
-          <div class="accordion-body px-4 pb-4">
-            <p class="text-[13px] c-secondary leading-relaxed mb-3">Приватность без потери качества: семантические подстановки, минимизация контекста.</p>
-            <ul class="text-[12px] c-text space-y-2 mb-3" style="opacity:0.8">
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Semantic Substitution Engine вместо абстрактных масок</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Data Minimization Agent — только нужные факты в LLM</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Split inference: декомпозиция запросов в изолированных сессиях</li>
-            </ul>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">NER</span>
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">cross-encoder</span>
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">differential privacy</span>
-            </div>
-          </div>
-        </div>
-        <div class="accordion glass-card rounded-xl overflow-hidden">
-          <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center p-4">
-            <h3 class="font-bold text-[14px] text-left">Персонализация через implicit learning</h3>
-            <span class="material-symbols-outlined c-muted text-xl accordion-icon">expand_more</span>
-          </button>
-          <div class="accordion-body px-4 pb-4">
-            <p class="text-[13px] c-secondary leading-relaxed mb-3">Обучение на поведении пользователя без явной обратной связи.</p>
-            <ul class="text-[12px] c-text space-y-2 mb-3" style="opacity:0.8">
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Персональные cross-encoder reranker-ы на implicit feedback</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Онтологический слой: co-occurrence как boost при retrieval</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>Error Memory — бизнес-правила из коррекций пользователя</li>
-              <li class="flex gap-2.5 items-start"><span class="accent-dot mt-[3px] text-[8px]">&#11044;</span>LoRA-адаптеры для on-prem с A/B тестированием</li>
-            </ul>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">PyTorch</span>
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">PEFT/LoRA</span>
-              <span class="text-[9px] px-2 py-[3px] rounded-md tech-chip font-mono uppercase tracking-wider">MLflow</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: Что мы ожидаем -->
-  <section class="fade-in pb-14">
-    <h2 class="text-[1.4rem] font-bold tracking-tight font-headline mb-6">Что мы ожидаем</h2>
-    <div id="req-backend" class="req-panel space-y-5">
-      <div class="space-y-3">
-        <span class="text-[10px] uppercase tracking-[0.12em] c-muted font-bold">Обязательно</span>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">Python</span>
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">TypeScript</span>
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">REST API</span>
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">PostgreSQL</span>
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">Docker</span>
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">CI/CD</span>
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">event-driven</span>
-        </div>
-      </div>
-      <div class="space-y-3">
-        <span class="text-[10px] uppercase tracking-[0.12em] c-muted font-bold">Будет плюсом</span>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 rounded-full chip-nice text-[12px]">LLM API</span>
-          <span class="px-3 py-1.5 rounded-full chip-nice text-[12px]">embeddings</span>
-          <span class="px-3 py-1.5 rounded-full chip-nice text-[12px]">Redis Streams</span>
-          <span class="px-3 py-1.5 rounded-full chip-nice text-[12px]">Kafka</span>
-          <span class="px-3 py-1.5 rounded-full chip-nice text-[12px]">prompt engineering</span>
-        </div>
-      </div>
-    </div>
-    <div id="req-ai" class="req-panel space-y-5" style="display:none">
-      <div class="space-y-3">
-        <span class="text-[10px] uppercase tracking-[0.12em] c-muted font-bold">Обязательно</span>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">Python</span>
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">LLM API</span>
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">RAG</span>
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">NER</span>
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">text classification</span>
-          <span class="px-3 py-1.5 rounded-full chip-req text-[12px] font-semibold">ML-пайплайны</span>
-        </div>
-      </div>
-      <div class="space-y-3">
-        <span class="text-[10px] uppercase tracking-[0.12em] c-muted font-bold">Будет плюсом</span>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 rounded-full chip-nice text-[12px]">LoRA/QLoRA</span>
-          <span class="px-3 py-1.5 rounded-full chip-nice text-[12px]">LangGraph</span>
-          <span class="px-3 py-1.5 rounded-full chip-nice text-[12px]">differential privacy</span>
-          <span class="px-3 py-1.5 rounded-full chip-nice text-[12px]">knowledge graphs</span>
-          <span class="px-3 py-1.5 rounded-full chip-nice text-[12px]">ГОСТ / IEC</span>
-        </div>
-      </div>
-    </div>
-    <!-- AI Native -->
-    <div class="mt-6 bg-native p-5 rounded-2xl relative overflow-hidden border-native" style="border:1px solid var(--native-border)">
-      <div class="absolute top-[-20px] right-[-20px] w-32 h-32 rounded-full blur-[60px]" style="background:var(--native-glow)"></div>
-      <div class="relative z-10 flex items-start gap-3.5">
-        <span class="material-symbols-outlined c-accent text-[28px] mt-0.5" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+  <!-- Почему это интересно -->
+  <section class="fade-in px-6 py-16 bg-surface-container-low">
+    <h2 class="text-2xl font-bold tracking-tight mb-8">Почему это интересно</h2>
+    <div class="grid grid-cols-2 gap-4 mb-6">
+      <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary-container">hub</span>
         <div>
-          <p class="font-bold text-[15px] leading-tight font-headline">AI Native подход</p>
-          <p class="text-[13px] c-muted mt-1.5 leading-relaxed">Claude Code как основной инструмент разработки. Git RFC для спецификаций. Агентная оркестрация задач.</p>
+          <h4 class="font-bold text-sm mb-1">Мультиагентные AI-системы</h4>
+          <p class="text-[11px] leading-tight text-on-secondary-container">18 агентов в проде, не на слайдах</p>
+        </div>
+      </div>
+      <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary-container">calculate</span>
+        <div>
+          <h4 class="font-bold text-sm mb-1">Математическая валидация</h4>
+          <p class="text-[11px] leading-tight text-on-secondary-container">Wolfram + нормативная база</p>
+        </div>
+      </div>
+      <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary-container">shield</span>
+        <div>
+          <h4 class="font-bold text-sm mb-1">Защита данных</h4>
+          <p class="text-[11px] leading-tight text-on-secondary-container">PII-прокси, split inference, аудит</p>
+        </div>
+      </div>
+      <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3">
+        <span class="material-symbols-outlined text-primary-container">factory</span>
+        <div>
+          <h4 class="font-bold text-sm mb-1">Реальные клиенты</h4>
+          <p class="text-[11px] leading-tight text-on-secondary-container">Промышленность, юридика, закупки</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex items-start gap-4 p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
+      <span class="material-symbols-outlined text-primary-container">info</span>
+      <p class="text-sm font-medium text-on-secondary-container">Это не обёртка над ChatGPT. Мы строим систему, которая генерирует юридически значимые документы с полной трассируемостью фактов.</p>
+    </div>
+  </section>
+
+  <!-- Чем предстоит заниматься -->
+  <section class="fade-in px-6 py-16 bg-surface">
+    <h2 class="text-2xl font-bold tracking-tight mb-6">Чем предстоит заниматься</h2>
+
+    <!-- Role Tabs -->
+    <div class="flex gap-2 mb-2">
+      <button id="tab-backend" onclick="switchTab('backend')" class="flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-primary-container text-on-primary">Backend</button>
+      <button id="tab-ai" onclick="switchTab('ai')" class="flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-surface-container-low text-on-secondary-container">AI Engineer</button>
+    </div>
+    <p id="subtitle-backend" class="text-sm text-on-secondary-container mb-6">Middle+ / Senior · Python, TypeScript · Гибрид</p>
+    <p id="subtitle-ai" class="text-sm text-on-secondary-container mb-6 hidden">Middle+ / Senior · Python, TypeScript · Гибрид</p>
+
+    <!-- Backend Accordion -->
+    <div id="panel-backend" class="space-y-3">
+      <!-- 1 -->
+      <div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+        <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+          <span class="font-bold text-sm">Персонализация платформы</span>
+          <span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon rotate-180">expand_more</span>
+        </button>
+        <div class="accordion-body open px-4 pb-4">
+          <p class="text-sm text-on-secondary-container mb-4">Система, которая адаптируется под каждого пользователя: профиль, предпочтения, контекст.</p>
+          <div class="space-y-3 mb-4">
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Хранилища профилей + API инкрементального обновления</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Фоновая обработка сессий: embedding-кластеризация, паттерны</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Модульный конструктор системных промптов</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">PostgreSQL</span>
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Redis Streams</span>
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">sentence-transformers</span>
+          </div>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+        <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+          <span class="font-bold text-sm">Безопасность и приватность</span>
+          <span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon">expand_more</span>
+        </button>
+        <div class="accordion-body px-4 pb-4">
+          <p class="text-sm text-on-secondary-container mb-4">Контроль данных при работе с LLM: классификация, маршрутизация, аудит.</p>
+          <div class="space-y-3 mb-4">
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">PII-прокси с типизированной анонимизацией (NER для русского)</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Маршрутизатор: облако vs локальная модель vs retrieval-only</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Append-only аудит-лог с hash chain, sandboxing от prompt injection</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Natasha/spaCy</span>
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">PKI</span>
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">PostgreSQL triggers</span>
+          </div>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+        <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+          <span class="font-bold text-sm">Граф решений</span>
+          <span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon">expand_more</span>
+        </button>
+        <div class="accordion-body px-4 pb-4">
+          <p class="text-sm text-on-secondary-container mb-4">Институциональная память: кто, когда, на основании чего принял решение.</p>
+          <div class="space-y-3 mb-4">
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Event capture + кластеризация сессий по семантике</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Decision points с версионированием</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Процессные цепочки по entity overlap и временной близости</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Kafka/Redis Streams</span>
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">embeddings</span>
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">OpenAPI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Engineer Accordion -->
+    <div id="panel-ai" class="space-y-3 hidden">
+      <!-- 1 -->
+      <div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+        <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+          <span class="font-bold text-sm">Мультиагентная оркестрация</span>
+          <span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon rotate-180">expand_more</span>
+        </button>
+        <div class="accordion-body open px-4 pb-4">
+          <p class="text-sm text-on-secondary-container mb-4">Специализированные агенты: извлечение сущностей, классификация, предсказание действий.</p>
+          <div class="space-y-3 mb-4">
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">ProfileExtractor, DecisionDetector, WorkflowDetector</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Пайплайн обнаружения решений с confidence score</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Temporal models для предсказания типа следующего запроса</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">LangGraph</span>
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Claude API</span>
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">PrefixSpan</span>
+          </div>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+        <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+          <span class="font-bold text-sm">Интеллектуальная защита данных</span>
+          <span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon">expand_more</span>
+        </button>
+        <div class="accordion-body px-4 pb-4">
+          <p class="text-sm text-on-secondary-container mb-4">Приватность без потери качества: семантические подстановки, минимизация контекста.</p>
+          <div class="space-y-3 mb-4">
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Semantic Substitution Engine вместо абстрактных масок</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Data Minimization Agent — только нужные факты в LLM</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Split inference: декомпозиция запросов в изолированных сессиях</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">NER</span>
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">cross-encoder</span>
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">differential privacy</span>
+          </div>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+        <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+          <span class="font-bold text-sm">Персонализация через implicit learning</span>
+          <span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon">expand_more</span>
+        </button>
+        <div class="accordion-body px-4 pb-4">
+          <p class="text-sm text-on-secondary-container mb-4">Обучение на поведении пользователя без явной обратной связи.</p>
+          <div class="space-y-3 mb-4">
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Персональные cross-encoder reranker-ы на implicit feedback</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Онтологический слой: co-occurrence как boost при retrieval</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">Error Memory — бизнес-правила из коррекций пользователя</p>
+            </div>
+            <div class="flex gap-3">
+              <div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div>
+              <p class="text-sm text-on-secondary-container">LoRA-адаптеры для on-prem с A/B тестированием</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">PyTorch</span>
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">PEFT/LoRA</span>
+            <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">MLflow</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: CTA -->
-  <section class="fade-in pb-8 text-center">
-    <button onclick="if(window.Telegram&&Telegram.WebApp)Telegram.WebApp.openTelegramLink('https://t.me/dumatel_hr');else window.open('https://t.me/dumatel_hr')"
-      class="w-full py-4 grad-btn font-bold text-[16px] rounded-xl glow-btn active:scale-[0.97] transition-transform duration-150 font-headline tracking-tight">
-      Откликнуться
-    </button>
-    <div class="flex items-center justify-center gap-2.5 c-muted text-[13px] mt-4">
-      <span>Гибридный формат</span>
-      <span class="w-1 h-1 rounded-full sep"></span>
-      <span>Полная занятость</span>
+  <!-- Что мы ожидаем -->
+  <section class="fade-in px-6 py-16 bg-surface-container-low">
+    <h2 class="text-2xl font-bold tracking-tight mb-6">Что мы ожидаем</h2>
+
+    <!-- Requirements Tabs -->
+    <div class="flex gap-2 mb-6">
+      <button id="req-tab-backend" onclick="switchReqTab('backend')" class="flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-primary-container text-on-primary">Backend</button>
+      <button id="req-tab-ai" onclick="switchReqTab('ai')" class="flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-surface-container-low text-on-secondary-container">AI Engineer</button>
+    </div>
+
+    <!-- Backend Requirements -->
+    <div id="req-panel-backend" class="space-y-6">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-on-secondary-container mb-4 block">Обязательно</span>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">Python</span>
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">TypeScript</span>
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">REST API</span>
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">PostgreSQL</span>
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">Docker</span>
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">CI/CD</span>
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">event-driven</span>
+        </div>
+      </div>
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-on-secondary-container mb-4 block">Будет плюсом</span>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">LLM API</span>
+          <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">embeddings</span>
+          <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Redis Streams</span>
+          <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Kafka</span>
+          <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">prompt engineering</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Requirements -->
+    <div id="req-panel-ai" class="space-y-6 hidden">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-on-secondary-container mb-4 block">Обязательно</span>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">Python</span>
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">LLM API</span>
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">RAG</span>
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">NER</span>
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">text classification</span>
+          <span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">ML-пайплайны</span>
+        </div>
+      </div>
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-on-secondary-container mb-4 block">Будет плюсом</span>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">LoRA/QLoRA</span>
+          <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">LangGraph</span>
+          <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">differential privacy</span>
+          <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">knowledge graphs</span>
+          <span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">ГОСТ/IEC</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Native card -->
+    <div class="flex items-start gap-4 p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/20 mt-8">
+      <span class="material-symbols-outlined filled text-primary-container">auto_awesome</span>
+      <div>
+        <h4 class="font-bold text-sm mb-1">AI Native подход</h4>
+        <p class="text-sm text-on-secondary-container">Claude Code как основной инструмент разработки. Git RFC для спецификаций. Агентная оркестрация задач.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="fade-in px-6 py-20 bg-surface">
+    <div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 text-center">
+      <h2 class="text-2xl font-bold mb-4">Откликнуться</h2>
+      <p class="text-on-secondary-container mb-8">Напишите нашему HR — расскажем подробнее.</p>
+      <button onclick="if(window.Telegram&&Telegram.WebApp)Telegram.WebApp.openLink('https://t.me/dumatel_hr');else window.open('https://t.me/dumatel_hr')" class="inline-flex items-center justify-center w-full py-4 px-6 bg-primary-container text-on-primary font-bold rounded-lg shadow-lg hover:shadow-xl transition-all active:scale-95 duration-150">
+        Написать в Telegram
+      </button>
+      <p class="text-sm text-on-secondary-container mt-4">Гибридный формат · Полная занятость</p>
     </div>
   </section>
 
 </main>
 
 <script>
-  // Telegram
+  // Telegram WebApp
   if (window.Telegram && window.Telegram.WebApp) {
     Telegram.WebApp.expand();
     Telegram.WebApp.ready();
@@ -485,41 +485,63 @@
     });
   }
 
-  // Tabs
-  function switchTab(tab) {
-    document.querySelectorAll('.tab-panel').forEach(function(el) { el.classList.remove('active'); });
-    document.querySelectorAll('.req-panel').forEach(function(el) { el.style.display = 'none'; });
-    document.getElementById('panel-' + tab).classList.add('active');
-    document.getElementById('req-' + tab).style.display = 'block';
-    var b = document.getElementById('tab-backend');
-    var a = document.getElementById('tab-ai');
-    b.className = 'tab-btn flex-1 py-3 text-[13px] rounded-lg transition-all duration-300 ' + (tab === 'backend' ? 'tab-active font-bold' : 'tab-inactive font-medium');
-    a.className = 'tab-btn flex-1 py-3 text-[13px] rounded-lg transition-all duration-300 ' + (tab === 'ai' ? 'tab-active font-bold' : 'tab-inactive font-medium');
+  // Tab switching — syncs both role accordion and requirements
+  function switchTab(role) {
+    var tabs = ['backend', 'ai'];
+    tabs.forEach(function(t) {
+      var tabBtn = document.getElementById('tab-' + t);
+      var panel = document.getElementById('panel-' + t);
+      var subtitle = document.getElementById('subtitle-' + t);
+      if (t === role) {
+        tabBtn.className = 'flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-primary-container text-on-primary';
+        panel.classList.remove('hidden');
+        subtitle.classList.remove('hidden');
+      } else {
+        tabBtn.className = 'flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-surface-container-low text-on-secondary-container';
+        panel.classList.add('hidden');
+        subtitle.classList.add('hidden');
+      }
+    });
+    // Sync requirements tab
+    switchReqTab(role);
+  }
+
+  function switchReqTab(role) {
+    var tabs = ['backend', 'ai'];
+    tabs.forEach(function(t) {
+      var reqTabBtn = document.getElementById('req-tab-' + t);
+      var reqPanel = document.getElementById('req-panel-' + t);
+      if (t === role) {
+        reqTabBtn.className = 'flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-primary-container text-on-primary';
+        reqPanel.classList.remove('hidden');
+      } else {
+        reqTabBtn.className = 'flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-surface-container-low text-on-secondary-container';
+        reqPanel.classList.add('hidden');
+      }
+    });
+    // Sync role tabs
+    var roleTabBtn = document.getElementById('tab-' + role);
+    if (roleTabBtn && roleTabBtn.className.indexOf('bg-primary-container') === -1) {
+      switchTab(role);
+    }
   }
 
   // Accordion
   function toggleAccordion(btn) {
-    var acc = btn.closest('.accordion');
-    var body = acc.querySelector('.accordion-body');
+    var body = btn.nextElementSibling;
     var icon = btn.querySelector('.accordion-icon');
-    var open = body.classList.contains('open');
-    if (open) {
-      body.classList.remove('open');
-      icon.classList.remove('rotated');
-      icon.className = icon.className.replace('c-accent', 'c-muted');
-      acc.classList.remove('glow-orange');
-    } else {
-      body.classList.add('open');
-      icon.classList.add('rotated');
-      icon.className = icon.className.replace('c-muted', 'c-accent');
-      acc.classList.add('glow-orange');
-    }
+    body.classList.toggle('open');
+    icon.classList.toggle('rotate-180');
   }
 
-  // Fade-in
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
+  // Fade-in on scroll
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
 </script>
 </body></html>
