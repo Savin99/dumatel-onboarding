@@ -95,6 +95,11 @@
         }
         .fade-in { opacity:0; transform:translateY(16px); transition:all 0.5s ease; }
         .fade-in.visible { opacity:1; transform:translateY(0); }
+        .accordion-body { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.3s ease; }
+        .accordion-body.open { max-height: 600px; opacity: 1; }
+        .accordion-icon { transition: transform 0.3s ease; }
+        .rotate-180 { transform: rotate(180deg); }
+        .hidden { display: none; }
         ::-webkit-scrollbar { width:0; }
         html { scroll-behavior: smooth; }
 
@@ -407,6 +412,231 @@
 </div>
 </div>
 </section>
+<!-- Почему это интересно -->
+<section class="fade-in px-6 py-16 bg-surface-container-low">
+<h2 class="text-2xl font-bold tracking-tight mb-8">Почему это интересно</h2>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3">
+<span class="material-symbols-outlined text-primary-container">hub</span>
+<div>
+<h4 class="font-bold text-sm mb-1">Мультиагентные AI-системы</h4>
+<p class="text-[11px] leading-tight text-on-secondary-container">18 агентов в проде, не на слайдах</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3">
+<span class="material-symbols-outlined text-primary-container">calculate</span>
+<div>
+<h4 class="font-bold text-sm mb-1">Математическая валидация</h4>
+<p class="text-[11px] leading-tight text-on-secondary-container">Wolfram + нормативная база</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3">
+<span class="material-symbols-outlined text-primary-container">shield</span>
+<div>
+<h4 class="font-bold text-sm mb-1">Защита данных</h4>
+<p class="text-[11px] leading-tight text-on-secondary-container">PII-прокси, split inference, аудит</p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10 flex flex-col gap-3">
+<span class="material-symbols-outlined text-primary-container">factory</span>
+<div>
+<h4 class="font-bold text-sm mb-1">Реальные клиенты</h4>
+<p class="text-[11px] leading-tight text-on-secondary-container">Промышленность, юридика, закупки</p>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary-container">info</span>
+<p class="text-sm font-medium text-on-secondary-container">Это не обёртка над ChatGPT. Мы строим систему, которая генерирует юридически значимые документы с полной трассируемостью фактов.</p>
+</div>
+</section>
+<!-- Чем предстоит заниматься -->
+<section class="fade-in px-6 py-16 bg-surface">
+<h2 class="text-2xl font-bold tracking-tight mb-6">Чем предстоит заниматься</h2>
+<div class="flex gap-2 mb-2">
+<button id="tab-backend" onclick="switchTab('backend')" class="flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-primary-container text-on-primary">Backend</button>
+<button id="tab-ai" onclick="switchTab('ai')" class="flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-surface-container-low text-on-secondary-container">AI Engineer</button>
+</div>
+<p id="subtitle-backend" class="text-sm text-on-secondary-container mb-6">Middle+ / Senior · Python, TypeScript · Гибрид</p>
+<p id="subtitle-ai" class="text-sm text-on-secondary-container mb-6 hidden">Middle+ / Senior · Python, ML/NLP · Гибрид</p>
+<div id="panel-backend" class="space-y-3">
+<div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+<button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+<span class="font-bold text-sm">Персонализация платформы</span>
+<span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon rotate-180">expand_more</span>
+</button>
+<div class="accordion-body open px-4 pb-4">
+<p class="text-sm text-on-secondary-container mb-4">Система, которая адаптируется под каждого пользователя: профиль, предпочтения, контекст.</p>
+<div class="space-y-3 mb-4">
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Хранилища профилей + API инкрементального обновления</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Фоновая обработка сессий: embedding-кластеризация, паттерны</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Модульный конструктор системных промптов</p></div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">PostgreSQL</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Redis Streams</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">sentence-transformers</span>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+<button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+<span class="font-bold text-sm">Безопасность и приватность</span>
+<span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon">expand_more</span>
+</button>
+<div class="accordion-body px-4 pb-4">
+<p class="text-sm text-on-secondary-container mb-4">Контроль данных при работе с LLM: классификация, маршрутизация, аудит.</p>
+<div class="space-y-3 mb-4">
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">PII-прокси с типизированной анонимизацией (NER для русского)</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Маршрутизатор: облако vs локальная модель vs retrieval-only</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Append-only аудит-лог с hash chain, sandboxing от prompt injection</p></div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Natasha/spaCy</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">PKI</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">PostgreSQL triggers</span>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+<button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+<span class="font-bold text-sm">Граф решений</span>
+<span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon">expand_more</span>
+</button>
+<div class="accordion-body px-4 pb-4">
+<p class="text-sm text-on-secondary-container mb-4">Институциональная память: кто, когда, на основании чего принял решение.</p>
+<div class="space-y-3 mb-4">
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Event capture + кластеризация сессий по семантике</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Decision points с версионированием</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Процессные цепочки по entity overlap и временной близости</p></div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Kafka/Redis Streams</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">embeddings</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">OpenAPI</span>
+</div>
+</div>
+</div>
+</div>
+<div id="panel-ai" class="space-y-3 hidden">
+<div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+<button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+<span class="font-bold text-sm">Мультиагентная оркестрация</span>
+<span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon rotate-180">expand_more</span>
+</button>
+<div class="accordion-body open px-4 pb-4">
+<p class="text-sm text-on-secondary-container mb-4">Специализированные агенты: извлечение сущностей, классификация, предсказание действий.</p>
+<div class="space-y-3 mb-4">
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">ProfileExtractor, DecisionDetector, WorkflowDetector</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Пайплайн обнаружения решений с confidence score</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Temporal models для предсказания типа следующего запроса</p></div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">LangGraph</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Claude API</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">PrefixSpan</span>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+<button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+<span class="font-bold text-sm">Интеллектуальная защита данных</span>
+<span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon">expand_more</span>
+</button>
+<div class="accordion-body px-4 pb-4">
+<p class="text-sm text-on-secondary-container mb-4">Приватность без потери качества: семантические подстановки, минимизация контекста.</p>
+<div class="space-y-3 mb-4">
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Semantic Substitution Engine вместо абстрактных масок</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Data Minimization Agent — только нужные факты в LLM</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Split inference: декомпозиция запросов в изолированных сессиях</p></div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">NER</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">cross-encoder</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">differential privacy</span>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container-low border border-outline-variant/10 overflow-hidden">
+<button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-4 text-left">
+<span class="font-bold text-sm">Персонализация через implicit learning</span>
+<span class="material-symbols-outlined text-on-secondary-container transition-transform duration-300 accordion-icon">expand_more</span>
+</button>
+<div class="accordion-body px-4 pb-4">
+<p class="text-sm text-on-secondary-container mb-4">Обучение на поведении пользователя без явной обратной связи.</p>
+<div class="space-y-3 mb-4">
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Персональные cross-encoder reranker-ы на implicit feedback</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Онтологический слой: co-occurrence как boost при retrieval</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">Error Memory — бизнес-правила из коррекций пользователя</p></div>
+<div class="flex gap-3"><div class="mt-1.5 w-2 h-2 rounded-full bg-primary-container shrink-0"></div><p class="text-sm text-on-secondary-container">LoRA-адаптеры для on-prem с A/B тестированием</p></div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">PyTorch</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">PEFT/LoRA</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">MLflow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Что мы ожидаем -->
+<section class="fade-in px-6 py-16 bg-surface-container-low">
+<h2 class="text-2xl font-bold tracking-tight mb-6">Что мы ожидаем</h2>
+<div id="req-panel-backend" class="space-y-6">
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-secondary-container mb-4 block">Обязательно</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">Python</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">TypeScript</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">REST API</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">PostgreSQL</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">Docker</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">CI/CD</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">event-driven</span>
+</div>
+</div>
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-secondary-container mb-4 block">Будет плюсом</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">LLM API</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">embeddings</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Redis Streams</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">Kafka</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">prompt engineering</span>
+</div>
+</div>
+</div>
+<div id="req-panel-ai" class="space-y-6 hidden">
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-secondary-container mb-4 block">Обязательно</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">Python</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">LLM API</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">RAG</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">NER</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">text classification</span>
+<span class="px-3 py-1.5 bg-primary-container/10 text-primary-container rounded-full text-sm font-bold">ML-пайплайны</span>
+</div>
+</div>
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-on-secondary-container mb-4 block">Будет плюсом</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">LoRA/QLoRA</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">LangGraph</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">differential privacy</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">knowledge graphs</span>
+<span class="px-3 py-1.5 bg-surface-container-lowest rounded-full text-sm font-medium">ГОСТ/IEC</span>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/20 mt-8">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings:'FILL' 1">auto_awesome</span>
+<div>
+<h4 class="font-bold text-sm mb-1">AI Native подход</h4>
+<p class="text-sm text-on-secondary-container">Claude Code как основной инструмент разработки. Git RFC для спецификаций. Агентная оркестрация задач.</p>
+</div>
+</div>
+</section>
 <!-- CTA Section -->
 <section class="fade-in px-6 py-20 bg-surface">
 <div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 text-center">
@@ -453,5 +683,37 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   document.querySelectorAll('[data-count]').forEach(el => observer.observe(el));
+
+  // Tab switching
+  function switchTab(tab) {
+    document.getElementById('panel-backend').classList.toggle('hidden', tab !== 'backend');
+    document.getElementById('panel-ai').classList.toggle('hidden', tab !== 'ai');
+    document.getElementById('subtitle-backend').classList.toggle('hidden', tab !== 'backend');
+    document.getElementById('subtitle-ai').classList.toggle('hidden', tab !== 'ai');
+    document.getElementById('req-panel-backend').classList.toggle('hidden', tab !== 'backend');
+    document.getElementById('req-panel-ai').classList.toggle('hidden', tab !== 'ai');
+    var b = document.getElementById('tab-backend');
+    var a = document.getElementById('tab-ai');
+    if (tab === 'backend') {
+      b.className = 'flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-primary-container text-on-primary';
+      a.className = 'flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-surface-container-low text-on-secondary-container';
+    } else {
+      a.className = 'flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-primary-container text-on-primary';
+      b.className = 'flex-1 py-2.5 px-4 rounded-lg text-sm font-bold transition-colors bg-surface-container-low text-on-secondary-container';
+    }
+  }
+
+  // Accordion
+  function toggleAccordion(btn) {
+    var body = btn.nextElementSibling;
+    var icon = btn.querySelector('.accordion-icon');
+    if (body.classList.contains('open')) {
+      body.classList.remove('open');
+      icon.classList.remove('rotate-180');
+    } else {
+      body.classList.add('open');
+      icon.classList.add('rotate-180');
+    }
+  }
 </script>
 </body></html>
