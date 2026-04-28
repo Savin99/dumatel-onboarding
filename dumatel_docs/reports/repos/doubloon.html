@@ -1,0 +1,2919 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Аналитика, техническая документация и управление проектом DOT.MIND / Думатель">
+      
+      
+      
+      
+        <link rel="prev" href="diver.html">
+      
+      
+        <link rel="next" href="kraken.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Doubloon - Dumatel — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#doubloon-billing-" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../index.html" title="Dumatel — Документация" class="md-header__button md-logo" aria-label="Dumatel — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dumatel — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Doubloon
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../presentation/product-story.html" class="md-tabs__link">
+          
+  
+  
+  Презентация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tech-description/overview.html" class="md-tabs__link">
+          
+  
+  
+  Техническая документация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../management/project-status.html" class="md-tabs__link">
+          
+  
+  
+  Управление проектом
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../product-overview.html" class="md-tabs__link">
+          
+  
+  
+  Аналитические отчёты
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Dumatel — Документация" class="md-nav__button md-logo" aria-label="Dumatel — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
+
+    </a>
+    Dumatel — Документация
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Презентация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Презентация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../presentation/product-story.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    О продукте
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../presentation/technical-overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технический обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../presentation/team-page.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Команда
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../presentation/faq.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../presentation/changelog-style.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Техническая документация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Техническая документация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-description/overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор системы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-description/services.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Реестр сервисов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-description/data-flows.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Потоки данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-description/api-contracts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API и контракты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-description/infrastructure.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инфраструктура
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-description/stack-details.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технический стек
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-description/tech-debt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технический долг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tech-description/dev-onboarding.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Онбординг разработчика
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление проектом
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Управление проектом
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/project-status.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Статус проекта
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/team-overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Команда и загрузка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/roadmap-status.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дорожная карта
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/product-metrics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Метрики
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/subsystems.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подсистемы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/risks-and-debt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Риски и техдолг
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/glossary-business.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Бизнес-глоссарий
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аналитические отчёты
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Аналитические отчёты
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../product-overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор продукта
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services-map.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Карта сервисов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture-deep-dive.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Архитектура
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../youtrack-analysis.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YouTrack-анализ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teams-and-people.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Команда
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech-stack-audit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технический стек
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../product-ecosystem.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Экосистема
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Репозитории
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Репозитории
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="seadragon.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seadragon (Frontend)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sprut.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprut (API Gateway)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coral.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coral (UI Kit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="anchor.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anchor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bilge.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chronograf.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chronograf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="clown.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="descent.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="diver.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diver
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Doubloon
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="doubloon.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Doubloon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Назначение и роль в системе
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Технологический стек
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Технологический стек">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dev-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dev-зависимости
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Точки входа
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API / интерфейсы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API / интерфейсы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rest-api-apibilling-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST API (/api/billing -- 17 эндпоинтов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Биллинговая модель
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nats-subjects-producer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NATS Subjects (Producer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-to-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Аутентификация (service-to-service)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Middleware-стек
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Зависимости от других сервисов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Зависимости от других сервисов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Граф зависимостей
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Текущее состояние
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Текущее состояние">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тестирование
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Конфигурация (env-переменные)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-tech-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевые TODO / tech debt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Источники
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kraken.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kraken
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="krill.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Krill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="marker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sealayers.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sealayers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="shark.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nautilus.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nautilus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="manta.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rag-mind.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG.MIND
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="react-flow-templates.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React Flow Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dev.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="devops.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="shared.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shared
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="doubloon-billing-">Doubloon -- Billing-сервис<a class="headerlink" href="#doubloon-billing-" title="Permanent link">&para;</a></h1>
+<h2 id="_1">Назначение и роль в системе<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Standalone billing-микросервис платформы Dumatel. Инкапсулирует всю бизнес-логику платежей и подписок: управление балансом (hold/commit/release), тарифные планы и подписки, автопродление, привязка банковских карт и СБП, оплата через Tinkoff (T-Kassa), транзакции, учёт долга.</p>
+<p>Doubloon -- внутренний сервис, недоступный напрямую из интернета. Все запросы приходят от Sprut (API Gateway) через HTTP с авторизацией по <code>X-Friend-Token</code>. Является отдельным bounded context для биллинга с собственной БД (через общую библиотеку psdot).</p>
+<h2 id="_2">Технологический стек<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Технология</th>
+<th>Версия</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>3.14</td>
+<td>Язык (<strong>pre-release!</strong> -- указано в pip-compile header и pyproject.toml)</td>
+</tr>
+<tr>
+<td>FastAPI</td>
+<td>0.122.0</td>
+<td>REST API framework</td>
+</tr>
+<tr>
+<td>Starlette</td>
+<td>0.50.0</td>
+<td>ASGI-базис</td>
+</tr>
+<tr>
+<td>Uvicorn</td>
+<td>0.38.0</td>
+<td>ASGI-сервер</td>
+</tr>
+<tr>
+<td>Gunicorn</td>
+<td>23.0.0</td>
+<td>Process manager для production</td>
+</tr>
+<tr>
+<td>SQLAlchemy</td>
+<td>2.0.44</td>
+<td>ORM (async mode через psdot)</td>
+</tr>
+<tr>
+<td>AsyncPG</td>
+<td>0.31.0</td>
+<td>PostgreSQL async-драйвер (через psdot)</td>
+</tr>
+<tr>
+<td>Pydantic</td>
+<td>2.12.5</td>
+<td>Валидация request/response</td>
+</tr>
+<tr>
+<td>Pydantic Settings</td>
+<td>2.12.0</td>
+<td>Конфигурация из env-переменных</td>
+</tr>
+<tr>
+<td>psdot</td>
+<td>1.6.0</td>
+<td>Shared models, DAL (BalanceDal, CardDal, FreezeDal, SubscriptionDal, TariffDal, TransactionDal, ChargeOffDal, OrganizationDebtDal, SbpAccountDal), миграции</td>
+</tr>
+<tr>
+<td>orker</td>
+<td>2.1.0</td>
+<td>NATS producer (публикация задач в Anchor)</td>
+</tr>
+<tr>
+<td>nats-py</td>
+<td>2.12.0</td>
+<td>NATS client (транзитивно через orker)</td>
+</tr>
+<tr>
+<td>aiohttp</td>
+<td>3.13.2 (с speedups)</td>
+<td>HTTP-клиент для Tinkoff API</td>
+</tr>
+<tr>
+<td>aiohttp-retry</td>
+<td>2.9.1</td>
+<td>Retry-логика для HTTP-запросов</td>
+</tr>
+<tr>
+<td>Sentry SDK</td>
+<td>2.46.0</td>
+<td>Мониторинг (интеграции: aiohttp, asyncpg, sqlalchemy)</td>
+</tr>
+<tr>
+<td>Alembic</td>
+<td>1.17.2</td>
+<td>Миграции БД (через psdot)</td>
+</tr>
+<tr>
+<td>greenlet</td>
+<td>3.2.4</td>
+<td>Корутины для SQLAlchemy (через psdot)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dev-">Dev-зависимости<a class="headerlink" href="#dev-" title="Permanent link">&para;</a></h3>
+<p>pytest с asyncio_mode="auto", 4 параллельных worker-а, coverage minimum <strong>70%</strong>.</p>
+<h2 id="_3">Структура проекта<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>source/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  src/
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    entrypoints/
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      main.py           -- FastAPI app + lifespan (NATS Producer, HTTPClients, TinkoffAPI)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    api/
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      api.py            -- Корневой роутер (/api/billing, /api/health)
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>      routers/
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        billing.py      -- Все биллинговые эндпоинты (561 строка)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        health.py       -- Healthcheck
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    middlewares.py       -- Auth (X-Friend-Token), exception handling, request logging
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    settings.py         -- Pydantic Settings: PostgreSQL, NATS, Tinkoff, Sentry
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    sentry_init.py      -- Sentry инициализация
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    exceptions.py       -- TinkoffError
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    schemas/            -- Pydantic-схемы (16 модулей)
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>      anchor.py         -- AnchorTask, AnchorCardTask
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>      balance.py        -- BalanceResponse
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>      card.py           -- CardAdd, CardSaveRequest, CardListResponse, CardMakePrimary, SbpMakePrimary
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>      charge_off.py     -- ChargeOff
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>      chronograf.py     -- (хронограф -- мониторинг)
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>      dept.py           -- Долг организации
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>      freeze.py         -- FreezeAdd, FreezeUpdate
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>      hold.py           -- HoldRequest, HoldResponse
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>      period.py         -- Billing period
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>      sbp.py            -- PaymentMethodType (CARD/SBP)
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>      subscription.py   -- AutoRenewRequest
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>      tariff.py         -- TariffInfo
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>      token.py          -- Токены
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>      transaction.py    -- BuyCreditsRequest, ChangePlanRequest, CommitRequest, ReleaseRequest, TransactionGetResponse, TransactionUpdate
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>      user.py           -- Пользователь
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    utils/
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>      calculate.py      -- calculate_credits_from_tokens (пересчёт токенов в кредиты)
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>      date.py           -- get_time_now
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>      http_client.py    -- HTTPClients factory
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>      logging.py        -- Настройка логирования
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>      payment.py        -- get_primary_payment_method (карта или СБП)
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>      sys.py            -- Системные утилиты
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>      tariff.py         -- _buy_package, _buy_tariff, _complete_transaction_internal, _initiate_card_anchor, _process_single_auto_renewal, _set_auto_renew
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>      tclient.py        -- TinkoffAPI (Tinkoff T-Kassa HTTP client)
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>  tests/                -- pytest
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>  requirements/
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    requirements.txt    -- pip-compiled зависимости (Python 3.14)
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    requirements-dev.txt
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>tools/
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>  charts/doubloon/      -- Helm chart для K8s
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>Dockerfile             -- Docker build на cr.monsterscorp.ru:5000/python:latest
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>docker-entrypoint-main.sh
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>.gitlab-ci.yml         -- CI/CD pipeline (шаблоны из devops/workflows)
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>pyproject.toml         -- Tool config (black, isort, mypy, flake8, pytest, coverage)
+</code></pre></div>
+<h2 id="_4">Точки входа<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Файл</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source/src/entrypoints/main.py</code></td>
+<td>FastAPI app с lifespan: init PostgreSQL (psdot.init), NATS Producer, HTTPClients, TinkoffAPI</td>
+</tr>
+<tr>
+<td><code>Dockerfile</code></td>
+<td>Docker build на <code>cr.monsterscorp.ru:5000/python:latest</code></td>
+</tr>
+<tr>
+<td><code>docker-entrypoint-main.sh</code></td>
+<td>Docker entrypoint</td>
+</tr>
+<tr>
+<td><code>.gitlab-ci.yml</code></td>
+<td>CI/CD pipeline (включения из dot.mind/devops/workflows)</td>
+</tr>
+<tr>
+<td><code>tools/charts/doubloon/</code></td>
+<td>Helm chart для Kubernetes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="api">API / интерфейсы<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<h3 id="rest-api-apibilling-17">REST API (<code>/api/billing</code> -- 17 эндпоинтов)<a class="headerlink" href="#rest-api-apibilling-17" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/billing/balance</code></td>
+<td>GET</td>
+<td>Баланс организации: quota, purchased, total, debt, tariff info, next_billing_date</td>
+</tr>
+<tr>
+<td><code>/api/billing/hold</code></td>
+<td>POST</td>
+<td>Резервирование кредитов (создание Freeze с operation_id)</td>
+</tr>
+<tr>
+<td><code>/api/billing/commit</code></td>
+<td>POST</td>
+<td>Списание зарезервированных кредитов (Freeze -&gt; COMPLETED, ChargeOff)</td>
+</tr>
+<tr>
+<td><code>/api/billing/release</code></td>
+<td>POST</td>
+<td>Освобождение резерва (Freeze -&gt; CANCELLED)</td>
+</tr>
+<tr>
+<td><code>/api/billing/buy</code></td>
+<td>POST</td>
+<td>Покупка дополнительных кредитов -&gt; Tinkoff payment -&gt; NATS anchor task</td>
+</tr>
+<tr>
+<td><code>/api/billing/change-plan</code></td>
+<td>POST</td>
+<td>Смена тарифного плана -&gt; Tinkoff payment -&gt; NATS anchor task</td>
+</tr>
+<tr>
+<td><code>/api/billing/tariffs</code></td>
+<td>GET</td>
+<td>Список активных тарифов с пометкой текущего</td>
+</tr>
+<tr>
+<td><code>/api/billing/transactions</code></td>
+<td>GET</td>
+<td>История транзакций организации</td>
+</tr>
+<tr>
+<td><code>/api/billing/transaction/{id}/complete</code></td>
+<td>POST</td>
+<td>Завершение транзакции (after payment confirmation)</td>
+</tr>
+<tr>
+<td><code>/api/billing/transaction/{id}/fail</code></td>
+<td>POST</td>
+<td>Пометка транзакции как failed</td>
+</tr>
+<tr>
+<td><code>/api/billing/process-auto-renewals/{id}</code></td>
+<td>POST</td>
+<td>Автопродление подписки -&gt; Tinkoff -&gt; NATS anchor task</td>
+</tr>
+<tr>
+<td><code>/api/billing/attach-card</code></td>
+<td>POST</td>
+<td>Инициация привязки карты -&gt; Tinkoff -&gt; NATS anchor_card task</td>
+</tr>
+<tr>
+<td><code>/api/billing/save-card</code></td>
+<td>POST</td>
+<td>Сохранение карты после подтверждения (pan, rebill_id, exp_date)</td>
+</tr>
+<tr>
+<td><code>/api/billing/card/make-primary</code></td>
+<td>PATCH</td>
+<td>Установка основной карты (карта или СБП)</td>
+</tr>
+<tr>
+<td><code>/api/billing/card/delete</code></td>
+<td>DELETE</td>
+<td>Удаление карты (+ Tinkoff removeCard) или СБП-аккаунта</td>
+</tr>
+<tr>
+<td><code>/api/billing/card/list</code></td>
+<td>GET</td>
+<td>Список карт и СБП-аккаунтов организации</td>
+</tr>
+<tr>
+<td><code>/api/billing/auto-renew</code></td>
+<td>POST</td>
+<td>Включение/выключение автопродления</td>
+</tr>
+<tr>
+<td><code>/api/health</code></td>
+<td>GET</td>
+<td>Healthcheck</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">Биллинговая модель<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><strong>Типы баланса:</strong>
+- <code>QUOTA</code> -- квота от тарифного плана (обновляется ежемесячно)
+- <code>PURCHASED</code> -- дополнительно купленные кредиты (TTL 60 дней)</p>
+<p><strong>Жизненный цикл кредитов:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Request -&gt; hold(tokens) -&gt; Freeze(ACTIVE, operation_id)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                |
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>     +----------+----------+
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>     |                      |
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  commit(tokens)         release()
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>     |                      |
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  Freeze(COMPLETED)    Freeze(CANCELLED)
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  ChargeOff(amount)    (кредиты возвращены)
+</code></pre></div></p>
+<p><strong>Тарифы:</strong>
+- Free tier: квота в месяц (ограниченная)
+- Платные тарифы: расширенная квота, ежемесячная/годовая оплата
+- Дополнительные пакеты кредитов: покупка сверх квоты</p>
+<p><strong>Подписки:</strong>
+- <code>billing_day</code> -- день биллинга
+- <code>next_billing_date</code> -- дата следующего списания
+- <code>auto_renew</code> -- флаг автопродления
+- Upgrade: немедленное применение, доплата разницы
+- Downgrade: запланированный на конец периода</p>
+<p><strong>Платёжные методы:</strong>
+- Банковская карта (через Tinkoff T-Kassa, rebill для рекуррентных платежей)
+- СБП (Система Быстрых Платежей) -- добавлена недавно (MR qr_list)</p>
+<h3 id="nats-subjects-producer">NATS Subjects (Producer)<a class="headerlink" href="#nats-subjects-producer" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Subject</th>
+<th>Payload</th>
+<th>Потребитель</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>anchor_tasks</code> (configurable: <code>settings.nats_anchor_subject</code>)</td>
+<td>AnchorTask (transaction_id, payment_id, billing_period)</td>
+<td>Anchor (проверка статуса платежа в Tinkoff)</td>
+</tr>
+<tr>
+<td><code>anchor_card_tasks</code> (configurable: <code>settings.nats_anchor_card_subject</code>)</td>
+<td>AnchorCardTask (payment_id, organization_id, transaction_id?, billing_period?)</td>
+<td>Anchor (проверка привязки карты)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="service-to-service">Аутентификация (service-to-service)<a class="headerlink" href="#service-to-service" title="Permanent link">&para;</a></h3>
+<p>Doubloon использует <code>X-Friend-Token</code> middleware для авторизации:
+- Все запросы (кроме <code>/api/health</code>) проверяют заголовок <code>X-Friend-Token</code>
+- Токен сравнивается с <code>settings.service_auth_token</code>
+- Без валидного токена -- HTTP 401 Unauthorized
+- JWT пользователя НЕ проверяется -- Doubloon доверяет вызывающему сервису (Sprut)</p>
+<h3 id="middleware-">Middleware-стек<a class="headerlink" href="#middleware-" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>request_middleware</code> -- логирование запросов (debug mode), X-Request-ID propagation к Sentry</li>
+<li><code>auth_middleware</code> -- проверка <code>X-Friend-Token</code> (кроме /api/health)</li>
+<li><code>catch_exceptions_middleware</code> -- централизованная обработка ошибок (DBError, RequestValidationError, HTTPException, generic Exception)</li>
+</ol>
+<h2 id="_6">Зависимости от других сервисов<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Сервис</th>
+<th>Протокол</th>
+<th>Направление</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PostgreSQL</strong></td>
+<td>asyncpg (psdot)</td>
+<td>Doubloon -&gt; PG</td>
+<td>Хранение: балансы, тарифы, подписки, транзакции, карты, freezes, charge-offs, долги, СБП-аккаунты</td>
+</tr>
+<tr>
+<td><strong>NATS JetStream</strong></td>
+<td>nats:// (orker)</td>
+<td>Doubloon -&gt; NATS</td>
+<td>Публикация задач в Anchor: <code>anchor_tasks</code>, <code>anchor_card_tasks</code></td>
+</tr>
+<tr>
+<td><strong>Tinkoff T-Kassa</strong></td>
+<td>HTTPS (aiohttp)</td>
+<td>Doubloon -&gt; Tinkoff</td>
+<td>Платёжный процессинг: инициация платежа, рекуррентные списания, привязка/удаление карт</td>
+</tr>
+<tr>
+<td><strong>Sentry</strong></td>
+<td>HTTPS</td>
+<td>Doubloon -&gt; Sentry</td>
+<td>Error tracking</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Вызывается из:</strong>
+| Вызывающий | Протокол | Сценарий |
+|---|---|---|
+| <strong>Sprut</strong> | HTTP (X-Friend-Token) | Все биллинговые операции из фронтенда (через <code>/api/billing</code> proxy) |
+| <strong>Bilge</strong> | HTTP (X-Friend-Token) | Автопродление подписок по расписанию (cron-like worker) |
+| <strong>Amigofish</strong> | HTTP (X-Friend-Token) | hold/commit/release кредитов при AI-генерации |</p>
+<h3 id="_7">Граф зависимостей<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>   Sprut ----+
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   Bilge ----+----&gt; Doubloon -----&gt; PostgreSQL (asyncpg/psdot)
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>   Amigofish-+    (X-Friend-Token)     |
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>                       |           +--&gt; NATS --&gt; Anchor
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>                       |           |
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>                       +-----------+--&gt; Tinkoff T-Kassa (HTTPS)
+</code></pre></div>
+<h2 id="_8">Текущее состояние<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><strong>Активная разработка</strong>. Последний merge в main: 2026-02-26 (добавлена поддержка СБП -- MR <code>qr_list</code>).</p>
+<p>Команда (по git log и YouTrack):
+- <strong>e.vlasov</strong> (Egor) -- основной разработчик
+- <strong>t.yaykarov</strong> -- разработчик (также работает над Sprut)</p>
+<h3 id="_9">Тестирование<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>pytest с <code>asyncio_mode="auto"</code>, 4 параллельных worker-а (<code>-n 4</code>)</li>
+<li>Coverage minimum: <strong>70%</strong> (выше чем у Sprut с 60%)</li>
+<li>greenlet в coverage concurrency закомментирован (<code>#TODO: add greenlet</code>)</li>
+</ul>
+<h3 id="cicd-pipeline">CI/CD Pipeline<a class="headerlink" href="#cicd-pipeline" title="Permanent link">&para;</a></h3>
+<p>Аналогичен Sprut -- используются шаблоны из <code>dot.mind/devops/workflows</code>:
+- version -&gt; lint -&gt; test -&gt; docker build -&gt; sentry release -&gt; helm chart build/push -&gt; update umbrella chart -&gt; deploy -&gt; verify pods state</p>
+<h3 id="env-">Конфигурация (env-переменные)<a class="headerlink" href="#env-" title="Permanent link">&para;</a></h3>
+<p>Ключевые настройки (без значений):
+- <code>POSTGRES_HOST</code>, <code>POSTGRES_PORT</code>, <code>POSTGRES_DB</code>, <code>POSTGRES_USER</code>, <code>POSTGRES_PASSWORD</code>
+- <code>NATS_HOST</code>, <code>NATS_PORT</code>
+- <code>NATS_ANCHOR_SUBJECT</code> (default: <code>anchor_tasks</code>)
+- <code>NATS_ANCHOR_CARD_SUBJECT</code> (default: <code>anchor_card_tasks</code>)
+- <code>TINKOFF_API_URL</code> (default: <code>https://securepay.tinkoff.ru</code>)
+- <code>TINKOFF_TERMINAL_KEY</code>, <code>TINKOFF_PASSWORD</code>
+- <code>TINKOFF_TAXATION</code> (default: <code>osn</code>), <code>TAX</code> (default: <code>vat22</code>)
+- <code>BASE_AMOUNT</code> (default: 1000)
+- <code>SERVICE_AUTH_TOKEN</code> -- для X-Friend-Token авторизации
+- <code>SENTRY_DSN</code></p>
+<h2 id="todo-tech-debt">Ключевые TODO / tech debt<a class="headerlink" href="#todo-tech-debt" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Категория</th>
+<th>Описание</th>
+<th>Приоритет</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Python 3.14</strong></td>
+<td>Pre-release версия Python (стабильный релиз ожидается октябрь 2026). Используется в production</td>
+<td>Высокий</td>
+</tr>
+<tr>
+<td><strong>TODO: chronograph</strong></td>
+<td><code>fail_transaction</code> помечен <code># TODO: chronograph</code> -- предполагается интеграция с мониторингом длительных транзакций</td>
+<td>Средний</td>
+</tr>
+<tr>
+<td><strong>TODO: add greenlet</strong></td>
+<td>В pyproject.toml coverage concurrency greenlet закомментирован -- coverage может неточно учитывать async-код</td>
+<td>Низкий</td>
+</tr>
+<tr>
+<td><strong>psdot как Git-зависимость</strong></td>
+<td>Версия <code>1.6.0+g9c1a663d</code> -- установлена из Git, не из PyPI</td>
+<td>Средний</td>
+</tr>
+<tr>
+<td><strong>orker как Git-зависимость</strong></td>
+<td>Версия <code>2.1.0+g1419ddb7</code> -- аналогично</td>
+<td>Средний</td>
+</tr>
+<tr>
+<td><strong>FastAPI 0.122</strong></td>
+<td>Версия ниже, чем у Sprut (0.128.1) -- рассинхронизация версий между сервисами</td>
+<td>Низкий</td>
+</tr>
+<tr>
+<td><strong>Gunicorn 23.0.0</strong></td>
+<td>Версия ниже, чем у Sprut (25.0.1) -- аналогичная рассинхронизация</td>
+<td>Низкий</td>
+</tr>
+<tr>
+<td><strong>Один файл-роутер</strong></td>
+<td>Вся логика биллинга в одном файле <code>billing.py</code> (561 строка) -- нет разделения на поддомены</td>
+<td>Низкий</td>
+</tr>
+<tr>
+<td><strong>Бизнес-логика в utils</strong></td>
+<td>Основная логика (_buy_package, _buy_tariff, _process_single_auto_renewal) живёт в <code>utils/tariff.py</code> с underscore-именами -- архитектурно это service layer, но оформлен как утилиты</td>
+<td>Низкий</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_10">Источники<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>repos/doubloon/source/requirements/requirements.txt</code> -- все зависимости с точными версиями (pip-compiled, Python 3.14)</li>
+<li><code>repos/doubloon/pyproject.toml</code> -- конфигурация инструментов (black, isort, mypy, pytest, coverage 70%)</li>
+<li><code>repos/doubloon/source/src/entrypoints/main.py</code> -- инициализация FastAPI: lifespan (NATS Producer, HTTPClients, TinkoffAPI), psdot.init</li>
+<li><code>repos/doubloon/source/src/api/api.py</code> -- корневой роутер: <code>/api/billing</code> + <code>/api/health</code></li>
+<li><code>repos/doubloon/source/src/api/routers/billing.py</code> -- все 17 биллинговых эндпоинтов (561 строка): balance, hold, commit, release, buy, change-plan, tariffs, transactions, cards, auto-renew, СБП</li>
+<li><code>repos/doubloon/source/src/middlewares.py</code> -- middleware: X-Friend-Token auth, exception handling, request logging</li>
+<li><code>repos/doubloon/source/src/settings.py</code> -- Pydantic Settings: PostgreSQL, NATS, Tinkoff, Sentry config</li>
+<li><code>repos/doubloon/source/src/schemas/</code> -- 16 Pydantic-схем (anchor, balance, card, freeze, hold, sbp, subscription, tariff, transaction и др.)</li>
+<li><code>repos/doubloon/source/src/utils/tariff.py</code> -- основная бизнес-логика: покупка, смена тарифа, автопродление</li>
+<li><code>repos/doubloon/source/src/utils/tclient.py</code> -- TinkoffAPI HTTP-клиент</li>
+<li><code>repos/doubloon/source/src/utils/payment.py</code> -- get_primary_payment_method (карта/СБП)</li>
+<li><code>repos/doubloon/source/src/utils/calculate.py</code> -- пересчёт токенов в кредиты</li>
+<li><code>repos/doubloon/Dockerfile</code> -- Docker build</li>
+<li><code>repos/doubloon/.gitlab-ci.yml</code> -- CI/CD pipeline</li>
+<li><code>repos/doubloon/tools/charts/doubloon/</code> -- Helm chart</li>
+<li><code>docs/backend-docs.md</code> -- документация по бэкенду</li>
+<li><code>docs/Описание микросервисов.pdf</code> -- описание микросервисов</li>
+<li>YouTrack DOTMIND-A-171 -- описание биллинга</li>
+<li>YouTrack DOTMIND-A-173 -- архитектура биллинга</li>
+<li>Git log -- автор: Egor (shallow clone)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
